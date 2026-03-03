@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Basics — Learn Python from Scratch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow glow-yellow"></div>
+  <div class="hero-glow glow-teal"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span></span> Beginner Friendly Guide</div>
+    <span class="hero-snake">🐍</span>
+    <h1>Learn<br><em>Python</em><br>Basics</h1>
+    <p class="hero-sub">Everything you need to go from zero to writing your first Python programs.</p>
+    <div class="hero-cta">
+      <a href="#variables" class="btn btn-primary">Start Learning</a>
+      <a href="#project" class="btn btn-ghost">See the Project →</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#what-is-python" class="nav-item">01 / What is Python</a>
+    <a href="#variables" class="nav-item">02 / Variables</a>
+    <a href="#data-types" class="nav-item">03 / Data Types</a>
+    <a href="#strings" class="nav-item">04 / Strings</a>
+    <a href="#numbers" class="nav-item">05 / Numbers</a>
+    <a href="#functions" class="nav-item">06 / Functions</a>
+    <a href="#scope" class="nav-item">07 / Scope</a>
+    <a href="#conditionals" class="nav-item">08 / Conditionals</a>
+    <a href="#booleans" class="nav-item">09 / Booleans</a>
+    <a href="#project" class="nav-item">10 / Project</a>
+  </div>
+</nav>
+
+<!-- 01 WHAT IS PYTHON -->
+<section id="what-is-python">
+  <div class="container reveal">
+    <div class="section-label">01</div>
+    <h2>What is Python?</h2>
+    <p>Python is a <strong>general-purpose programming language</strong> known for its simplicity and readability. It reads almost like plain English, making it one of the best languages to learn first.</p>
+    <div class="cards">
+      <div class="card"><span class="card-icon">📊</span><div class="card-title">Data Science &amp; ML</div><p class="card-desc">Power tools like NumPy, Pandas, and TensorFlow are all Python-based.</p></div>
+      <div class="card"><span class="card-icon">🌐</span><div class="card-title">Web Development</div><p class="card-desc">Frameworks like Django and Flask let you build full web apps.</p></div>
+      <div class="card"><span class="card-icon">🤖</span><div class="card-title">Automation</div><p class="card-desc">Automate boring tasks — file management, web scraping, scheduling.</p></div>
+      <div class="card"><span class="card-icon">🔒</span><div class="card-title">Cybersecurity</div><p class="card-desc">Used extensively in penetration testing and security tooling.</p></div>
+      <div class="card"><span class="card-icon">🖥️</span><div class="card-title">Embedded Systems</div><p class="card-desc">MicroPython runs on Raspberry Pi and microcontrollers.</p></div>
+      <div class="card"><span class="card-icon">⬇️</span><div class="card-title">Install Python</div><p class="card-desc">Download from <a href="https://python.org" style="color:var(--accent)">python.org</a> — available for Windows, Mac &amp; Linux.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 VARIABLES -->
+<section id="variables">
+  <div class="container reveal">
+    <div class="section-label">02</div>
+    <h2>Variables</h2>
+    <p>Variables are like <strong>labeled boxes</strong> — you store a value and refer to it by name later.</p>
+    <pre data-lang="python"><code><span class="cm"># Declare a variable with: name = value</span>
+<span class="fn">name</span> <span class="op">=</span> <span class="str">'John Doe'</span>
+<span class="fn">age</span>  <span class="op">=</span> <span class="num">25</span>
+<span class="fn">price</span> <span class="op">=</span> <span class="num">9.99</span>
+<span class="fn">is_logged_in</span> <span class="op">=</span> <span class="kw">True</span></code></pre>
+    <h3>Naming Rules</h3>
+    <div class="two-col">
+      <div><div class="callout"><strong>✅ Valid names</strong><br>Must start with a letter or <code>_</code><br>Only letters, numbers, underscores<br>Use <code>snake_case</code> for multiple words</div></div>
+      <div><div class="callout" style="border-color:var(--accent3);background:rgba(240,90,126,0.04)"><strong style="color:var(--accent3)">❌ Invalid names</strong><br>Cannot start with a number: <code>2fast</code><br>No spaces: <code>my variable</code><br>No reserved keywords: <code>if</code>, <code>class</code></div></div>
+    </div>
+    <pre data-lang="python"><code><span class="cm"># Case-sensitive — these are 3 different variables!</span>
+<span class="fn">age</span> <span class="op">=</span> <span class="num">10</span>
+<span class="fn">Age</span> <span class="op">=</span> <span class="num">20</span>
+<span class="fn">AGE</span> <span class="op">=</span> <span class="num">30</span></code></pre>
+  </div>
+</section>
+
+<!-- 03 DATA TYPES -->
+<section id="data-types">
+  <div class="container reveal">
+    <div class="section-label">03</div>
+    <h2>Data Types</h2>
+    <p>Python is <strong>dynamically typed</strong> — you don't declare types manually. Python figures it out from the value you assign.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>What it is</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>int</td><td>Whole number</td><td>42</td></tr>
+          <tr><td>float</td><td>Decimal number</td><td>3.14</td></tr>
+          <tr><td>str</td><td>Text</td><td>'hello'</td></tr>
+          <tr><td>bool</td><td>True or False</td><td>True</td></tr>
+          <tr><td>list</td><td>Ordered, changeable</td><td>[1, 'hi', 3.14]</td></tr>
+          <tr><td>tuple</td><td>Ordered, fixed</td><td>(7, 5, 8)</td></tr>
+          <tr><td>dict</td><td>Key-value pairs</td><td>{"name": "Alice"}</td></tr>
+          <tr><td>set</td><td>Unique items, unordered</td><td>{1, 2, 3}</td></tr>
+          <tr><td>None</td><td>No value</td><td>None</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <pre data-lang="python"><code><span class="fn">print</span>(<span class="cls">type</span>(<span class="str">'hello'</span>))           <span class="cm"># &lt;class 'str'&gt;</span>
+<span class="fn">print</span>(<span class="fn">isinstance</span>(<span class="str">'hi'</span>, <span class="cls">str</span>))  <span class="cm"># True</span>
+<span class="fn">print</span>(<span class="fn">isinstance</span>(<span class="num">42</span>, <span class="cls">str</span>))   <span class="cm"># False</span></code></pre>
+    <h3>Mutable vs Immutable</h3>
+    <div class="two-col">
+      <div class="callout"><strong>Immutable</strong> — can't be changed after creation<br><code>int, float, str, bool, tuple, None</code></div>
+      <div class="callout callout-teal"><strong>Mutable</strong> — can add, remove, or update items<br><code>list, dict, set</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 STRINGS -->
+<section id="strings">
+  <div class="container reveal">
+    <div class="section-label">04</div>
+    <h2>Working with Strings</h2>
+    <p>Strings are sequences of characters. Use single or double quotes — just stay consistent.</p>
+    <h3>Accessing Characters &amp; Slicing</h3>
+    <pre data-lang="python"><code><span class="fn">my_str</span> <span class="op">=</span> <span class="str">'Hello world'</span>
+<span class="fn">print</span>(<span class="fn">my_str</span>[<span class="num">0</span>])    <span class="cm"># H  (first character)</span>
+<span class="fn">print</span>(<span class="fn">my_str</span>[<span class="op">-</span><span class="num">1</span>])   <span class="cm"># d  (last character)</span>
+<span class="fn">print</span>(<span class="fn">my_str</span>[<span class="num">0</span>:<span class="num">5</span>])  <span class="cm"># Hello</span>
+<span class="fn">print</span>(<span class="fn">len</span>(<span class="fn">my_str</span>))  <span class="cm"># 11</span></code></pre>
+    <h3>f-Strings</h3>
+    <pre data-lang="python"><code><span class="fn">name</span> <span class="op">=</span> <span class="str">'Jessica'</span>
+<span class="fn">age</span>  <span class="op">=</span> <span class="num">28</span>
+<span class="fn">print</span>(<span class="str">f'My name is {name} and I am {age}.'</span>)</code></pre>
+    <h3>Common String Methods</h3>
+    <pre data-lang="python"><code><span class="fn">s</span> <span class="op">=</span> <span class="str">'hello world'</span>
+<span class="fn">s</span>.<span class="fn">upper</span>()                     <span class="cm"># 'HELLO WORLD'</span>
+<span class="fn">s</span>.<span class="fn">replace</span>(<span class="str">'hello'</span>, <span class="str">'hi'</span>)      <span class="cm"># 'hi world'</span>
+<span class="fn">s</span>.<span class="fn">split</span>(<span class="str">' '</span>)                  <span class="cm"># ['hello', 'world']</span>
+<span class="str">' '</span>.<span class="fn">join</span>([<span class="str">'a'</span>, <span class="str">'b'</span>])          <span class="cm"># 'a b'</span>
+<span class="fn">s</span>.<span class="fn">startswith</span>(<span class="str">'h'</span>)            <span class="cm"># True</span>
+<span class="str">'world'</span> <span class="kw">in</span> <span class="fn">s</span>                  <span class="cm"># True</span></code></pre>
+  </div>
+</section>
+
+<!-- 05 NUMBERS -->
+<section id="numbers">
+  <div class="container reveal">
+    <div class="section-label">05</div>
+    <h2>Working with Numbers</h2>
+    <pre data-lang="python"><code><span class="fn">print</span>(<span class="num">56</span> <span class="op">+</span> <span class="num">12</span>)    <span class="cm"># 68   — addition</span>
+<span class="fn">print</span>(<span class="num">56</span> <span class="op">-</span> <span class="num">12</span>)    <span class="cm"># 44   — subtraction</span>
+<span class="fn">print</span>(<span class="num">56</span> <span class="op">*</span> <span class="num">12</span>)    <span class="cm"># 672  — multiplication</span>
+<span class="fn">print</span>(<span class="num">56</span> <span class="op">/</span> <span class="num">12</span>)    <span class="cm"># 4.67 — division (always float)</span>
+<span class="fn">print</span>(<span class="num">56</span> <span class="op">%</span> <span class="num">12</span>)    <span class="cm"># 8    — modulus (remainder)</span>
+<span class="fn">print</span>(<span class="num">56</span> <span class="op">//</span> <span class="num">12</span>)   <span class="cm"># 4    — floor division</span>
+<span class="fn">print</span>(<span class="num">4</span> <span class="op">**</span> <span class="num">2</span>)     <span class="cm"># 16   — exponentiation</span></code></pre>
+    <h3>Useful Built-in Functions</h3>
+    <pre data-lang="python"><code><span class="fn">float</span>(<span class="num">4</span>)      <span class="cm"># 4.0  — int to float</span>
+<span class="fn">int</span>(<span class="num">4.9</span>)      <span class="cm"># 4    — float to int (truncates)</span>
+<span class="fn">round</span>(<span class="num">7.7</span>)    <span class="cm"># 8    — nearest integer</span>
+<span class="fn">abs</span>(<span class="op">-</span><span class="num">13</span>)      <span class="cm"># 13   — absolute value</span>
+<span class="fn">pow</span>(<span class="num">2</span>, <span class="num">3</span>)     <span class="cm"># 8    — 2 to the power of 3</span></code></pre>
+    <h3>Augmented Assignments</h3>
+    <pre data-lang="python"><code><span class="fn">x</span> <span class="op">=</span> <span class="num">10</span>
+<span class="fn">x</span> <span class="op">+=</span> <span class="num">5</span>   <span class="cm"># 15</span>
+<span class="fn">x</span> <span class="op">-=</span> <span class="num">3</span>   <span class="cm"># 12</span>
+<span class="fn">x</span> <span class="op">*=</span> <span class="num">2</span>   <span class="cm"># 24</span>
+<span class="fn">x</span> <span class="op">/=</span> <span class="num">4</span>   <span class="cm"># 6.0</span>
+<span class="fn">x</span> <span class="op">**=</span> <span class="num">2</span>  <span class="cm"># 36.0</span></code></pre>
+  </div>
+</section>
+
+<!-- 06 FUNCTIONS -->
+<section id="functions">
+  <div class="container reveal">
+    <div class="section-label">06</div>
+    <h2>Functions</h2>
+    <p>Functions are <strong>reusable blocks of code</strong>. Define once, call anytime.</p>
+    <pre data-lang="python"><code><span class="kw">def</span> <span class="fn">get_sum</span>(num_1, num_2):
+    <span class="kw">return</span> num_1 <span class="op">+</span> num_2
+
+<span class="fn">result</span> <span class="op">=</span> <span class="fn">get_sum</span>(<span class="num">3</span>, <span class="num">4</span>)
+<span class="fn">print</span>(<span class="fn">result</span>)  <span class="cm"># 7</span></code></pre>
+    <h3>Default Parameter Values</h3>
+    <pre data-lang="python"><code><span class="kw">def</span> <span class="fn">greet</span>(name, greeting<span class="op">=</span><span class="str">'Hello'</span>):
+    <span class="kw">return</span> <span class="str">f'{greeting}, {name}!'</span>
+
+<span class="fn">print</span>(<span class="fn">greet</span>(<span class="str">'Alice'</span>))       <span class="cm"># Hello, Alice!</span>
+<span class="fn">print</span>(<span class="fn">greet</span>(<span class="str">'Bob'</span>, <span class="str">'Hey'</span>))  <span class="cm"># Hey, Bob!</span></code></pre>
+    <h3>No Return Value</h3>
+    <pre data-lang="python"><code><span class="kw">def</span> <span class="fn">say_hi</span>():
+    <span class="fn">print</span>(<span class="str">'hi'</span>)
+
+<span class="fn">result</span> <span class="op">=</span> <span class="fn">say_hi</span>()   <span class="cm"># prints: hi</span>
+<span class="fn">print</span>(<span class="fn">result</span>)       <span class="cm"># None</span></code></pre>
+  </div>
+</section>
+
+<!-- 07 SCOPE -->
+<section id="scope">
+  <div class="container reveal">
+    <div class="section-label">07</div>
+    <h2>Scope</h2>
+    <p>Scope determines <strong>where a variable can be accessed</strong> in your code.</p>
+    <div class="cards">
+      <div class="card"><span class="card-icon">🏠</span><div class="card-title">Local Scope</div><p class="card-desc">Variables inside a function — only accessible within that function.</p></div>
+      <div class="card"><span class="card-icon">🪆</span><div class="card-title">Enclosing Scope</div><p class="card-desc">An inner function can read variables from its outer function.</p></div>
+      <div class="card"><span class="card-icon">🌍</span><div class="card-title">Global Scope</div><p class="card-desc">Variables outside all functions — accessible from anywhere.</p></div>
+      <div class="card"><span class="card-icon">⚙️</span><div class="card-title">Built-in Scope</div><p class="card-desc">Python's predefined names: print, str, type, len, etc.</p></div>
+    </div>
+    <pre data-lang="python"><code><span class="fn">tax</span> <span class="op">=</span> <span class="num">0.70</span>  <span class="cm"># global</span>
+
+<span class="kw">def</span> <span class="fn">get_total</span>(subtotal):
+    <span class="fn">total</span> <span class="op">=</span> subtotal <span class="op">+</span> (subtotal <span class="op">*</span> tax)  <span class="cm"># accesses global</span>
+    <span class="kw">return</span> <span class="fn">total</span>
+
+<span class="fn">print</span>(<span class="fn">get_total</span>(<span class="num">100</span>))  <span class="cm"># 170.0</span></code></pre>
+  </div>
+</section>
+
+<!-- 08 CONDITIONALS -->
+<section id="conditionals">
+  <div class="container reveal">
+    <div class="section-label">08</div>
+    <h2>if / elif / else</h2>
+    <p>Used to make decisions. Python runs the first block whose condition is <code>True</code>.</p>
+    <h3>Comparison Operators</h3>
+    <div class="op-grid">
+      <div class="op-card"><span class="op-sym">==</span><span class="op-name">Equal to</span></div>
+      <div class="op-card"><span class="op-sym">!=</span><span class="op-name">Not equal</span></div>
+      <div class="op-card"><span class="op-sym">&gt;</span><span class="op-name">Greater than</span></div>
+      <div class="op-card"><span class="op-sym">&lt;</span><span class="op-name">Less than</span></div>
+      <div class="op-card"><span class="op-sym">&gt;=</span><span class="op-name">Greater or equal</span></div>
+      <div class="op-card"><span class="op-sym">&lt;=</span><span class="op-name">Less or equal</span></div>
+    </div>
+    <pre data-lang="python"><code><span class="fn">age</span> <span class="op">=</span> <span class="num">16</span>
+
+<span class="kw">if</span> age <span class="op">&gt;=</span> <span class="num">18</span>:
+    <span class="fn">print</span>(<span class="str">'Adult'</span>)       <span class="cm"># skipped</span>
+<span class="kw">elif</span> age <span class="op">&gt;=</span> <span class="num">13</span>:
+    <span class="fn">print</span>(<span class="str">'Teenager'</span>)    <span class="cm"># ✅ this runs</span>
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">'Child'</span>)       <span class="cm"># skipped</span></code></pre>
+  </div>
+</section>
+
+<!-- 09 BOOLEANS -->
+<section id="booleans">
+  <div class="container reveal">
+    <div class="section-label">09</div>
+    <h2>Truthy, Falsy &amp; Booleans</h2>
+    <p>Every value in Python is secretly <code>True</code> or <code>False</code> in a logical context.</p>
+    <div class="tf-grid">
+      <div class="tf-card tf-false">
+        <div class="tf-label">❌ Falsy (treated as False)</div>
+        <div class="tf-items">
+          <span class="tf-item">False</span><span class="tf-item">0</span><span class="tf-item">0.0</span>
+          <span class="tf-item">''</span><span class="tf-item">None</span><span class="tf-item">[]</span><span class="tf-item">{}</span>
+        </div>
+      </div>
+      <div class="tf-card tf-true">
+        <div class="tf-label">✅ Truthy (treated as True)</div>
+        <div class="tf-items">
+          <span class="tf-item">True</span><span class="tf-item">1</span><span class="tf-item">3.14</span>
+          <span class="tf-item">'hello'</span><span class="tf-item">[1,2,3]</span><span class="tf-item">{'a':1}</span>
+        </div>
+      </div>
+    </div>
+    <h3>Boolean Operators: and, or, not</h3>
+    <pre data-lang="python"><code><span class="cm"># AND — both must be true</span>
+<span class="kw">if</span> is_citizen <span class="kw">and</span> age <span class="op">&gt;=</span> <span class="num">18</span>:
+    <span class="fn">print</span>(<span class="str">'Can vote'</span>)
+
+<span class="cm"># OR — at least one must be true</span>
+<span class="kw">if</span> age <span class="op">&lt;</span> <span class="num">18</span> <span class="kw">or</span> is_student:
+    <span class="fn">print</span>(<span class="str">'Student discount'</span>)
+
+<span class="cm"># NOT — flips the value</span>
+<span class="kw">if</span> <span class="kw">not</span> is_admin:
+    <span class="fn">print</span>(<span class="str">'Access denied'</span>)
+
+<span class="cm"># Short-circuiting</span>
+<span class="fn">print</span>(<span class="kw">False</span> <span class="kw">and</span> <span class="num">10</span>)  <span class="cm"># False</span>
+<span class="fn">print</span>(<span class="kw">True</span> <span class="kw">or</span> <span class="num">10</span>)   <span class="cm"># True</span>
+<span class="fn">print</span>(<span class="kw">True</span> <span class="kw">and</span> <span class="num">10</span>)  <span class="cm"># 10</span></code></pre>
+  </div>
+</section>
+
+<!-- 10 PROJECT -->
+<section id="project">
+  <div class="container reveal">
+    <div class="section-label">10</div>
+    <h2>Practice Project 🎮</h2>
+    <p>Put everything together! This RPG Character Creator uses variables, functions, conditionals, strings, and type checking all at once.</p>
+
+    <div class="rpg-demo">
+      <div class="rpg-title">⚔️ RPG Character Creator — Live Demo</div>
+      <div class="rpg-form">
+        <div class="rpg-field">
+          <label>Character Name (max 10 chars, no spaces)</label>
+          <input type="text" id="rpg-name" value="ren" maxlength="10">
+        </div>
+        <div class="rpg-field">
+          <label>Strength (1–4)</label>
+          <input type="number" id="rpg-str" value="4" min="1" max="4">
+        </div>
+        <div class="rpg-field">
+          <label>Intelligence (1–4)</label>
+          <input type="number" id="rpg-int" value="2" min="1" max="4">
+        </div>
+        <div class="rpg-field">
+          <label>Charisma (1–4) — stats must sum to 7</label>
+          <input type="number" id="rpg-cha" value="1" min="1" max="4">
+        </div>
+      </div>
+      <button class="rpg-run" onclick="runRpg()">▶ Create Character</button>
+      <div class="rpg-output" id="rpg-output">Click above to create your character...</div>
+    </div>
+
+    <pre data-lang="python"><code><span class="fn">full_dot</span>  <span class="op">=</span> <span class="str">'●'</span>
+<span class="fn">empty_dot</span> <span class="op">=</span> <span class="str">'○'</span>
+
+<span class="kw">def</span> <span class="fn">create_character</span>(name, strength, intelligence, charisma):
+    <span class="kw">if not</span> <span class="fn">isinstance</span>(name, <span class="cls">str</span>): <span class="kw">return</span> <span class="str">'The character name should be a string'</span>
+    <span class="kw">if</span> name <span class="op">==</span> <span class="str">''</span>:               <span class="kw">return</span> <span class="str">'The character should have a name'</span>
+    <span class="kw">if</span> <span class="fn">len</span>(name) <span class="op">&gt;</span> <span class="num">10</span>:           <span class="kw">return</span> <span class="str">'The character name is too long'</span>
+    <span class="kw">if</span> <span class="str">' '</span> <span class="kw">in</span> name:               <span class="kw">return</span> <span class="str">'The character name should not contain spaces'</span>
+
+    <span class="fn">stats</span> <span class="op">=</span> [strength, intelligence, charisma]
+    <span class="kw">if not</span> <span class="fn">all</span>(<span class="fn">isinstance</span>(s, <span class="cls">int</span>) <span class="kw">for</span> s <span class="kw">in</span> stats): <span class="kw">return</span> <span class="str">'All stats should be integers'</span>
+    <span class="kw">if</span> <span class="fn">any</span>(s <span class="op">&lt;</span> <span class="num">1</span> <span class="kw">for</span> s <span class="kw">in</span> stats):  <span class="kw">return</span> <span class="str">'All stats should be no less than 1'</span>
+    <span class="kw">if</span> <span class="fn">any</span>(s <span class="op">&gt;</span> <span class="num">4</span> <span class="kw">for</span> s <span class="kw">in</span> stats):  <span class="kw">return</span> <span class="str">'All stats should be no more than 4'</span>
+    <span class="kw">if</span> <span class="fn">sum</span>(stats) <span class="op">!=</span> <span class="num">7</span>:            <span class="kw">return</span> <span class="str">'The character should start with 7 points'</span>
+
+    <span class="kw">def</span> <span class="fn">bar</span>(v): <span class="kw">return</span> full_dot <span class="op">*</span> v <span class="op">+</span> empty_dot <span class="op">*</span> (<span class="num">10</span> <span class="op">-</span> v)
+    <span class="kw">return</span> <span class="str">f"{name}\nSTR {bar(strength)}\nINT {bar(intelligence)}\nCHA {bar(charisma)}"</span>
+
+<span class="fn">print</span>(<span class="fn">create_character</span>(<span class="str">'ren'</span>, <span class="num">4</span>, <span class="num">2</span>, <span class="num">1</span>))
+<span class="cm"># ren
+# STR ●●●●○○○○○○
+# INT ●●○○○○○○○○
+# CHA ●○○○○○○○○○</span></code></pre>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>🐍 Python Basics — Open for everyone to learn</p>
+  <br>
+  <p>
+    <a href="https://docs.python.org/3/" target="_blank">Official Python Docs</a> &nbsp;·&nbsp;
+    <a href="https://pythontutor.com/" target="_blank">Visualize Your Code</a> &nbsp;·&nbsp;
+    <a href="https://www.freecodecamp.org/" target="_blank">More Practice</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
